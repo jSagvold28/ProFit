@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ProFit - Signup</title>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ProFit</h1>
+        <h3>Signup</h3>
+        <p>Welcome!</p>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+          event.preventDefault(); // prevent the form from submitting
+          const data = {
+            name: document.querySelector('input[name="name"]').value,
+            email: document.querySelector('input[name="email"]').value,
+            password: document.querySelector('input[name="password"]').value,
+            gender: document.querySelector('select[name="gender"]').value,
+            birthdate: document.querySelector('input[name="birthdate"]').value,
+            height: document.querySelector('input[name="height"]').value,
+            weight: document.querySelector('input[name="weight"]').value,
+            dailySteps: document.querySelector('input[name="daily-steps"]').value,
+            dailyCaloriesBurnt: document.querySelector('input[name="daily-calories-burnt"]').value
+          };
+          localStorage.setItem('profit-data', JSON.stringify(data));
+          window.location.href = 'http://127.0.0.1:5500/app/app.html'; // redirect to app.html
+        }
+      </script>
+    </head>
+    <body>
+      <div class="container">
+        <form onsubmit="handleSubmit(event)">
+          <p>Name:</p>
+          <input type="text" name="name" placeholder="first name, and last name">
+  
+          <p>Email:</p>
+          <input type="email" name="email" placeholder="email">
+  
+          <p>Password:</p>
+          <input type="password" name="password" placeholder="password">
+  
+          <p><strong>Fitness Information</strong></p>
+  
+          <p>Gender</p>
+          <select name="gender">
+            <option>Gender Selector</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+  
+          <p>Birthdate</p>
+          <input type="date" name="birthdate" placeholder="birthday">
+  
+          <p>Height (inches):</p>
+          <input type="number" name="height" placeholder="height in inches">
+  
+          <p>Weight</p>
+          <input type="number" name="weight" placeholder="weight">
+  
+          <h3>Fitness Goals:</h3>
+          <p>Per day:</p>
+  
+          <p>Daily Steps:</p>
+          <input type="number" name="daily-steps" placeholder="daily steps">
+  
+          <p>Daily Calories Burnt:</p>
+          <input type="number" name="daily-calories-burnt" placeholder="daily calories burnt">
+  
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    
+    
+
+
+</body>
+</html>
